@@ -1,5 +1,8 @@
 SosoMoim::Application.routes.draw do
   get "users/new"
+  
+  match '/signup',  :to => 'users#new'
+  
 
   get "pages/home"
   get "pages/contact"
