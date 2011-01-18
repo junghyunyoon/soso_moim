@@ -5,9 +5,9 @@ class AttendancesController < ApplicationController
     @moim = Moim.find(params[:attendance][:attended_id])
     current_user.attend!(@moim)
     respond_to do |format|
-      format.html { redirect_to @moim }
-      format.js
-    end
+       format.html { redirect_to @moim }
+       format.js
+     end
 
   end
 
@@ -20,3 +20,6 @@ class AttendancesController < ApplicationController
     end
   end
 end
+
+
+  

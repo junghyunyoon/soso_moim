@@ -54,22 +54,15 @@ class User < ActiveRecord::Base
     attendances.find_by_attended_id(attended)
   end
 
+
   def attend!(attended)
     attendances.create!(:attended_id => attended.id)
   end
-  
-  
-  def attending?(attended)
-      attendances.find_by_attended_id(attended)
-    end
 
-    def attend!(attended)
-      attendances.create!(:attended_id => attended.id)
-    end
 
-    def unattend!(attended)
+  def unattend!(attended)
       attendances.find_by_attended_id(attended).destroy
-    end
+  end
 
   def feed
     # This is preliminary. See Chapter 12 for the full implementation.
