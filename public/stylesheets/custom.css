@@ -197,3 +197,60 @@ ul.users {
 .users li {
   list-style: none;
 }
+
+
+h1.moim {
+  margin-bottom: 0.3em;
+}
+
+table.moims {
+  margin-top: 1em;
+}
+
+table.moims tr {
+  height: 70px;
+}
+
+table.moims tr td.gravatar {
+  border-top: 1px solid #ccc;
+  vertical-align: top;
+  width: 50px;
+}
+
+table.moims tr td.moim {
+  border-top: 1px solid #ccc;
+  vertical-align: top;
+  padding-top: 10px;
+}
+
+table.moims tr td.moim span.timestamp {
+  display: block;
+  font-size: 85%;
+  color: #666;
+}
+
+div.user_info img {
+  padding-right: 0.1em;
+}
+
+div.user_info a {
+  text-decoration: none;
+}
+
+div.user_info span.user_name {
+  position: absolute;
+}
+
+div.user_info span.moims {
+  font-size: 80%;
+}
+
+form.new_moim {
+  margin-bottom: 2em;
+}
+
+form.new_moim textarea {
+  height: 4em;
+  margin-bottom: 0;
+}
+

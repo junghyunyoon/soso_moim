@@ -8,3 +8,8 @@ end
 Factory.sequence :email do |n|
   "person-#{n}@example.com"
 end
+
+Factory.define :moim do |moim|
+  moim.content "Foo bar"
+  moim.association :user
+end
