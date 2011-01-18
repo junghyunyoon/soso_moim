@@ -1,0 +1,22 @@
+<table summary="Information about attending meetings">
+  <tr>
+    <td class="main">
+      <h1><%= @title %></h1>
+      
+      <% unless @moims.empty? %>
+        <table class="moims">
+          <%= render @moims %>
+        </table>
+        <%= will_paginate @moims %>
+      <% end %>
+    </td>
+    <td class="sidebar round">
+      <strong>Name</strong> <%= @user.name %><br />
+      <strong>URL</strong> <%= link_to user_path(@user), @user %><br />
+      <strong>Moims</strong> <%= @user.moims.count %>
+      <%= render 'shared/stats' %>
+    
+    </td>
+  </tr>
+</table>
+

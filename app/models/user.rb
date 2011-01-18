@@ -15,9 +15,11 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation
   
   has_many :moims, :dependent => :destroy
+  has_many :attendances, :foreign_key => "attendee_id",
+                         :dependent => :destroy
+  has_many :attending, :through => :attendances, :source => :attended
   
-  
-  
+                          
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   
   validates :name,  :presence => true,
@@ -47,6 +49,27 @@ class User < ActiveRecord::Base
     user = find_by_id(id)
     (user && user.salt == cookie_salt) ? user : nil
   end
+  
+  def attending?(attended)
+    attendances.find_by_attended_id(attended)
+  end
+
+  def attend!(attended)
+    attendances.create!(:attended_id => attended.id)
+  end
+  
+  
+  def attending?(attended)
+      attendances.find_by_attended_id(attended)
+    end
+
+    def attend!(attended)
+      attendances.create!(:attended_id => attended.id)
+    end
+
+    def unattend!(attended)
+      attendances.find_by_attended_id(attended).destroy
+    end
 
   def feed
     # This is preliminary. See Chapter 12 for the full implementation.

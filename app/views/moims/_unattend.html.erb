@@ -1,0 +1,5 @@
+<%= form_for current_user.attendances.find_by_attended_id(@moim),
+             :html => { :method => :delete },
+             :remote => true do |f| %>
+  <div class="actions"><%= f.submit "Unattend" %></div>
+<% end %>

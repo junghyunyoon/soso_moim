@@ -3,17 +3,17 @@
     <tr>
       <td class="main">
         <h1 class="moim">What Moim?</h1>
-        <%= render 'shared/moim_form' %>
+        <%= render 'shared/moim_form' %>  
 		<%= render 'shared/feed' %>
       </td>
       <td class="sidebar round">
         <%= render 'shared/user_info' %>
+		<%= render 'shared/stats' %>
       </td>
     </tr>
   </table>
 <% else %>
   <h1>Sample App</h1>
-
   <p>
     This is the home page for the
     <a href="http://headflow.net/">Sosohan Moim</a>
@@ -21,3 +21,7 @@
 
   <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
 <% end %>
+<table class="moims" summary="User moims">
+  <%= render @moims %>
+</table>
+<%= will_paginate @moims %>

@@ -1,0 +1,11 @@
+<h1>All Moims</h1>
+
+<%= link_to "New Moim", newmoim_path, :class => "signup_button round" %>
+
+<%= will_paginate %>
+	<table class="moims" summary="User moims">
+	  <%= render @moims %>
+	</table>
+<%= will_paginate %>
+
+

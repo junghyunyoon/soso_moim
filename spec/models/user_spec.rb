@@ -197,6 +197,39 @@ describe User do
 
     end
 
+    describe "attendances" do
+
+        before(:each) do
+            @user = User.create!(@attr)
+            @attended = Factory(:moim)
+        end
+
+        it "should have a attendances method" do
+            @user.should respond_to(:attendances)
+        end
+
+        it "should have a attending method" do
+            @user.should respond_to(:attending)
+        end
+
+        it "should attend a moim" do
+            @user.attend!(@attended)
+            @user.should be_attending(@attended)
+        end
+
+        it "should include the attended moim in the following array" do
+            @user.attend!(@attended)
+            @user.attending.should include(@attended)
+        end
+
+
+        it "should unattend a moim" do
+          @user.attend!(@attended)
+          @user.unattend!(@attended)
+          @user.should_not be_attending(@attended)
+        end
+        
+    end
 
 end
 

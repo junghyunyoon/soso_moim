@@ -10,13 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110117085240) do
+ActiveRecord::Schema.define(:version => 20110118060827) do
+
+  create_table "attendances", :force => true do |t|
+    t.integer  "attendee_id"
+    t.integer  "attended_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "attendances", ["attended_id"], :name => "index_attendances_on_attended_id"
+  add_index "attendances", ["attendee_id", "attended_id"], :name => "index_attendances_on_attendee_id_and_attended_id", :unique => true
+  add_index "attendances", ["attendee_id"], :name => "index_attendances_on_attendee_id"
 
   create_table "moims", :force => true do |t|
     t.string   "content"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title"
   end
 
   add_index "moims", ["user_id"], :name => "index_moims_on_user_id"

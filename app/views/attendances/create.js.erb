@@ -1,0 +1,2 @@
+$("attend_form").update("<%= escape_javascript(render('users/unattend')) %>")
+$("attendees").update('<%= "#{@user.attendees.count} attendees" %>')

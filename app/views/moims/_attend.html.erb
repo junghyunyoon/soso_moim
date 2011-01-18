@@ -1,0 +1,5 @@
+<%= form_for current_user.attendances.build(:attended_id => @moim.id),
+             :remote => true do |f| %>
+  <div><%= f.hidden_field :attended_id %></div>
+  <div class="actions"><%= f.submit "Attend" %></div>
+<% end %>

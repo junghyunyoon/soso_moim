@@ -6,6 +6,7 @@ class PagesController < ApplicationController
             @moim = Moim.new
             @feed_items = current_user.feed.paginate(:page => params[:page])
         end
+        @moims = Moim.paginate(:page => params[:page])       
     end
 
     def contact

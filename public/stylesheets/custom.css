@@ -152,7 +152,7 @@ div.field, div.actions {
 .field_with_errors {
   margin-top: 10px;
   padding: 2px;
-  background-color: red;
+  background-color: blue;
   display: table;
 }
 
@@ -162,7 +162,7 @@ div.field, div.actions {
 
 #error_explanation {
   width: 400px;
-  border: 2px solid red;
+  border: 2px solid blue;
   padding: 7px;
   padding-bottom: 12px;
   margin-bottom: 20px;
@@ -254,3 +254,7 @@ form.new_moim textarea {
   margin-bottom: 0;
 }
 
+form.edit_moim textarea {
+  height: 10em;
+  margin-bottom: 0;
+}

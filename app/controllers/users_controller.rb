@@ -3,6 +3,13 @@ class UsersController < ApplicationController
     before_filter :correct_user, :only => [:edit, :update]
     before_filter :admin_user,   :only => :destroy
 
+    def attending
+      @title = "Attending"
+      @user = User.find(params[:id])
+      @moims = @user.attending.paginate(:page => params[:page])
+      render 'show_attending'
+    end
+
 
     def index
         @title = "All users"

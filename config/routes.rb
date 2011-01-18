@@ -1,10 +1,21 @@
 SosoMoim::Application.routes.draw do
-  resources :users
+  resources :users  do
+        member do
+          get :attending
+        end
+      end
+  
   resources :sessions, :only => [:new, :create, :destroy]
-  resources :moims, :only => [:create, :destroy, :edit, :update]
+  resources :moims do
+      member do 
+          get :attendees
+      end
+  end
+  resources :attendances, :only => [:create, :destroy]
   
   
   match '/signup',  :to => 'users#new'
+  match '/newmoim',  :to => 'moims#new'
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
   
@@ -16,6 +27,6 @@ SosoMoim::Application.routes.draw do
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
   
-  root :to => 'pages#home'
+  root :to => 'moims#index'
   
 end
