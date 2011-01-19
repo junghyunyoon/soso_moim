@@ -1,0 +1,18 @@
+<table summary="Information about Attendees">
+  <tr>
+    <td class="main">
+      <h1><%= @title %></h1>
+      <%= pluralize(@attendees.count, "attendee") %>
+      <% unless @attendees.empty? %>
+	 
+        <ul class="user">
+          <%= render @attendees %>
+        </ul>
+        <%= will_paginate @attendees %>
+      <% end %>
+    </td>
+   
+  </tr>
+</table>
+
+

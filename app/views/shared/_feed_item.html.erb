@@ -18,17 +18,7 @@
                                      :title => feed_item.content %>  
     <%= link_to "edit", edit_moim_path(feed_item)%>
   </td>
-  <% else %>
-    
-	<% unless current_user_manager?(feed_item) %>
-	  <div id="attend_form">
-	  <% if current_user.attending?(feed_item) %>
-	   <%= link_to "attend", edit_moim_path(feed_item)%>
-	  <% else %>
-	   <%= link_to "unattend", edit_moim_path(feed_item)%>
-	  <% end %>
-	  </div>
-	<% end %>
+
   <% end %>
 </tr>
 

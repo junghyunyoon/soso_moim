@@ -3,7 +3,7 @@
 }
 
 body {
-  background: #cff;
+  background: #FFFFFF;
 }
 
 header {
@@ -11,7 +11,7 @@ header {
 }
 
 header img {
-  padding: 1em;
+  padding: 0em;
   background: #fff;
 }
 

@@ -1,14 +1,12 @@
 <tr>
   <td class="moim">
 	<span class="title">
-	<strong><%= link_to moim.title, moim %></strong>
-		  
+		<strong><%= link_to moim.title, moim %></strong>  
 	</span><br />
     <span class="content"><%= moim.content %></span>
     <span class="timestamp">
       Posted <%= time_ago_in_words(moim.created_at) %> ago.
     </span>
   </td>
-  
 </tr>
 

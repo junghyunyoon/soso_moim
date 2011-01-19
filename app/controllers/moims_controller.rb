@@ -8,7 +8,6 @@ class MoimsController < ApplicationController
   end
 
 
-
   def attendees
     @title = "Attendees"
     @moim = Moim.find(params[:id])
@@ -18,6 +17,7 @@ class MoimsController < ApplicationController
 
   def show
       @moim = Moim.find(params[:id])
+      @attendees = @moim.attendees.paginate(:page => params[:page])
   end
   
   def create
@@ -54,7 +54,7 @@ class MoimsController < ApplicationController
     @moim.destroy
     redirect_back_or root_path
   end
-  
+
   private
     def authorized_user
         @moim = Moim.find(params[:id])

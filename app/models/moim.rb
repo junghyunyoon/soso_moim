@@ -12,9 +12,7 @@ class Moim < ActiveRecord::Base
                          :dependent => :destroy
                          
   has_many :attendees, :through => :attendances, :source => :attendee
-  
-  
+ 
   default_scope :order => 'moims.created_at DESC'
-  
-  
+ 
 end

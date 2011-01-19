@@ -1,28 +1,28 @@
 <table class="Moim" summary="Moim information">
-  <tr>
-    <td class="main">
-      <h1>
-        <%= @moim.title %>
-      </h1>
-	   <%= @moim.content %><br />
+	<tr>
+		<td class="main">
+			<h1>
+				<%= @moim.title %>
+			</h1>
+			<span class="content"><%= @moim.content %></span><br />
+			<span class="timestamp">
+			  Posted <%= time_ago_in_words(@moim.created_at) %> ago.
+			</span>
+			<% if current_user?(@moim.user) %>	
+			<%= link_to "delete", @moim, :method => :delete,
+			:confirm => "You sure?",
+			:title => @moim.content %>
+			<%= link_to "edit", edit_moim_path(@moim)%>
+			<% end %>
 
-	
-		<% if current_user?(@moim.user) %>
-		  
-		
-		
-		    <%= link_to "delete", @moim, :method => :delete,
-		                                     :confirm => "You sure?",
-		                                     :title => @moim.content %>
-		    <%= link_to "edit", edit_moim_path(@moim)%>
-		  
-		
-		
-		  <% end %>
-	
 			<%= render 'attend_form' if signed_in? %>
-    </td>
-  </tr>
+
+		</td>
+		<td class="sidebar round">
+			<strong>Manager</strong> <%= link_to @moim.user.name, @moim.user %><br />
+			<%= render 'shared/show_attendees' %>
+		</td>	
+	</tr>
 </table>
 
 

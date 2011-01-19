@@ -28,10 +28,12 @@ def make_users
 end
 
 def make_moims
+   n = 1
   User.all(:limit => 6).each do |user|
-    50.times do
+    50.times do 
       content = Faker::Lorem.sentence(5)
-      title = "test title"
+      title = "Moim #{n}"
+      n=n+1
       user.moims.create!(:title => title, :content => content)
     end
   end
