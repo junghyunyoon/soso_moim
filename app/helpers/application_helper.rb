@@ -13,5 +13,8 @@ module ApplicationHelper
   def logo
       image_tag("logo.png", :alt => "Sosohan Moim", :class => "round")
     end
-  
+
+  def newmoim_logo
+      image_tag("new_moim.png", :alt => "Sosohan Moim", :class => "round")
+  end
 end

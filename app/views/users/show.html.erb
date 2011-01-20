@@ -2,6 +2,9 @@
   <tr>
     <td class="main">
 
+		<%= stylesheet_link_tag "event_calendar" %>
+
+		<%= raw(event_calendar) %>
 	   <% unless @user.moims.empty? %>
 	        <table class="moims" summary="User moims">
 	          <%= render @moims %>

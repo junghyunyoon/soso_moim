@@ -1,10 +1,8 @@
 <table class="moim_index" summary="moim_information">
 	<tr>
 		<td class="main">
-			<h1>All Moims</h1>
-
-			<%= will_paginate %>
-
+			
+				  <%= link_to newmoim_logo, new_moim_path %>
 			<table class="moims" summary="User moims">
 				<%= render @moims %>
 			</table>
@@ -17,9 +15,6 @@
 			<% if signed_in? %>
 
 			<strong>Name</strong> <%= current_user.name %><br />
-
-
-
 
 			<% else %>
 			<h1>Sign in</h1>
