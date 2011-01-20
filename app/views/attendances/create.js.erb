@@ -1,2 +1,2 @@
 $("attend_form").update("<%= escape_javascript(render('moims/unattend')) %>")
-$("attendees").update('<%= "#{@moim.attendees.count} attendees" %>')
+$("attendees").update('<%= "#{@moim.attendees.count} attendees" %> <%= escape_javascript(render(@moim.attendees)) %>')

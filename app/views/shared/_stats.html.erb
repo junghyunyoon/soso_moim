@@ -2,10 +2,16 @@
 <div class="stats">
   <table summary="User stats">
     <tr>
-      <td>
-        <a href="<%= attending_user_path(@user) %>">
+      <td> <br />
+	    <a href="<%= managed_user_path(@user) %>">
           <span id="attending" class="stat">
-            <%= @user.attending.count %> attending
+          Managed Moims <%= @user.moims.count %> 
+          </span>
+        </a>
+       
+<a href="<%= attending_user_path(@user) %>">
+          <span id="attending" class="stat">
+          Attending Moims <%= @user.attending.count %> 
           </span>
         </a>
       </td>

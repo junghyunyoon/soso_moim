@@ -8,7 +8,6 @@ class AttendancesController < ApplicationController
        format.html { redirect_to @moim }
        format.js
      end
-
   end
 
   def destroy

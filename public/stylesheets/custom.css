@@ -1,9 +1,11 @@
 .container {
-  width: 710px;
+  width: 800px;
+  margin: 0 auto;
 }
 
 body {
   background: #FFFFFF;
+  font-family: Verdana, Arial, Helvetica, Tahoma;
 }
 
 header {
@@ -17,29 +19,31 @@ header img {
 
 section {
   margin-top: 1em;
-  font-size: 120%;
+  font-size: 100%;
   padding: 20px;
   background: #fff;
+  border-top: 2px solid #DDDDDD;
+  border-bottom: 2px solid #DDDDDD;
 }
 
 section h1 {
-  font-size: 200%;
+  font-size: 150%;
 }
 
 /* Links */
 
 a {
-  color: #09c;
+  color: #000000;
   text-decoration: none;
 }
 
 a:hover {
-  color: #069;
+  color: #000000;
   text-decoration: underline;
 }
 
 a:visited {
-  color: #069;
+  color: 	#708090;
 }
 
 
@@ -67,15 +71,17 @@ nav ul li {
 }
 
 nav ul li a {
+  color: #000000;
   padding: 0 5px;
   font-weight: bold;
 }
 
 nav ul li a:visited {
-  color: #09c;
+  color: #000000;
 }
 
 nav ul li a:hover {
+  color: #708090;
   text-decoration: underline;
 }
 
@@ -90,18 +96,10 @@ a.signup_button {
   text-align: center;
   width: 190px;
   color: #fff;
-  background: #006400;
+  background: #DDDDDD;
   font-size: 150%;
   font-weight: bold;
   padding: 20px;
-}
-
-/* Round corners */
-
-.round {
-  -moz-border-radius:    10px;
-  -webkit-border-radius: 10px;
-  border-radius:         10px;
 }
 
 
@@ -132,10 +130,10 @@ td.main {
 }
 
 td.sidebar {
-  width: 30%;
+  width: 100%;
   padding: 1em;
   vertical-align: top;
-  background: #ffc;
+  background: #DDDDDD;
 }
 
 .profile img.gravatar {
@@ -151,18 +149,19 @@ div.field, div.actions {
 
 .field_with_errors {
   margin-top: 10px;
-  padding: 2px;
-  background-color: blue;
+  padding: 0px;
+  background-color: #FFF;
   display: table;
 }
 
 .field_with_errors label {
-  color: #fff;
+  color: #FF9999;
+  font-weight: bold;
 }
 
 #error_explanation {
   width: 400px;
-  border: 2px solid blue;
+  border: 2px solid white;
   padding: 7px;
   padding-bottom: 12px;
   margin-bottom: 20px;
@@ -175,12 +174,12 @@ div.field, div.actions {
   padding: 5px 5px 5px 15px;
   font-size: 12px;
   margin: -7px;
-  background-color: #c00;
+  background-color: #FF9999;
   color: #fff;
 }
 
 #error_explanation p {
-  color: #333;
+  color: #000000;
   margin-bottom: 0;
   padding: 5px;
 }

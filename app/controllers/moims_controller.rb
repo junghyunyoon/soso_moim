@@ -1,5 +1,5 @@
 class MoimsController < ApplicationController
-  before_filter :authenticate  , :only => [:create, :destroy, :update, :edit]
+  before_filter :authenticate  , :only => [:create, :destroy, :update, :edit, :show]
   before_filter :authorized_user, :only => [:destroy, :update, :edit]
   
   def index
@@ -8,12 +8,6 @@ class MoimsController < ApplicationController
   end
 
 
-  def attendees
-    @title = "Attendees"
-    @moim = Moim.find(params[:id])
-    @users = @moim.attendees.paginate(:page => params[:page])
-    render 'show_attendees'
-  end
 
   def show
       @moim = Moim.find(params[:id])

@@ -4,10 +4,17 @@ class UsersController < ApplicationController
     before_filter :admin_user,   :only => :destroy
 
     def attending
-      @title = "Attending"
+      @title = "Attending Moims"
       @user = User.find(params[:id])
       @moims = @user.attending.paginate(:page => params[:page])
       render 'show_attending'
+    end
+    
+    def managed
+      @title = "Managed Moims"
+      @user = User.find(params[:id])
+      @moims = @user.moims.paginate(:page => params[:page])
+      render 'show_managed'
     end
 
 

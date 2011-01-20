@@ -1,7 +1,7 @@
 SosoMoim::Application.routes.draw do
   resources :users  do
         member do
-          get :attending
+          get :attending, :managed
         end
       end
   
@@ -15,7 +15,7 @@ SosoMoim::Application.routes.draw do
   
   
   match '/signup',  :to => 'users#new'
-  match '/newmoim',  :to => 'moims#new'
+
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
   

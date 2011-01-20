@@ -1,7 +1,7 @@
 <tr>
   <td class="moim">
 	<span class="title">
-		<strong><%= link_to moim.title, moim %></strong>  
+		<strong><%= link_to moim.title, moim %> by  </strong>  <%= link_to moim.user.name, moim.user %><br />
 	</span><br />
     <span class="content"><%= moim.content %></span>
     <span class="timestamp">
